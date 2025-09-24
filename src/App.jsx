@@ -14,6 +14,8 @@ import SignupPage from "./components/SignupPage";
 import PageNotFound from "./components/PageNotFound";
 import College from "./components/College";
 import Student from "./components/Student";
+import User from "./components/User";
+import Userdetails from "./components/Userdetails";
 
 function App() {
   const [subject, setSuject] = useState("English");
@@ -43,15 +45,22 @@ function App() {
       <Link to='/'>Home</Link>
       <Link to='/login'>Login</Link>
       <Link to='/signup'>Signup</Link>
+      <Link  to="/user">User</Link>
 
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path='/login' element={<LoginPage/>}/>
         <Route path="/signup" element={<SignupPage/>} />
+         {/* Dynamic routing */}
+        <Route path="/user" element={<User/>}/>
+        <Route path="/user/:id" element={<Userdetails/>} />
+       
         {/* if path was wrong then show 404 page */}
         {/* <Route path="/*" element={<PageNotFound/>}/> */}
+
         {/* if user enter a wrong path redirect to home automatically*/}
         <Route path="/*" element={<Navigate to="/"/>}/>
+
         {/* nested routes */}
         <Route path="/college" element={<College/>}>
         <Route path="student" element={<Student/>}/>
