@@ -8,9 +8,12 @@ import Useeffect from "./components/useeffect";
 import Useformstatus from "./components/Useformstatus";
 import Useref from "./components/Useref";
 import HomePage from "./components/HomePage";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import PageNotFound from "./components/PageNotFound";
+import College from "./components/College";
+import Student from "./components/Student";
 
 function App() {
   const [subject, setSuject] = useState("English");
@@ -45,6 +48,14 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path='/login' element={<LoginPage/>}/>
         <Route path="/signup" element={<SignupPage/>} />
+        {/* if path was wrong then show 404 page */}
+        {/* <Route path="/*" element={<PageNotFound/>}/> */}
+        {/* if user enter a wrong path redirect to home automatically*/}
+        <Route path="/*" element={<Navigate to="/"/>}/>
+        {/* nested routes */}
+        <Route path="/college" element={<College/>}>
+        <Route path="student" element={<Student/>}/>
+        </Route>
       </Routes>
     </div>
   );
