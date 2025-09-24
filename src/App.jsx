@@ -7,7 +7,10 @@ import Logics from "./components/Logics";
 import Useeffect from "./components/useeffect";
 import Useformstatus from "./components/Useformstatus";
 import Useref from "./components/Useref";
-import HomePage from "./pages/HomePage";
+import HomePage from "./components/HomePage";
+import { Link, Route, Routes } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 
 function App() {
   const [subject, setSuject] = useState("English");
@@ -20,10 +23,10 @@ function App() {
       <Logics />
       <Useeffect />
       <Useref />
-
+      {/* Context API */}
       <SubjectData.Provider value={subject}>
         <div style={{ backgroundColor: "yellow" }}>
-          <select value={subject} onChange={(e)=>setSuject(e.target.value)}>
+          <select value={subject} onChange={(e) => setSuject(e.target.value)}>
             <option value="">Select Subject</option>
             <option value="Maths">Maths</option>
             <option value="English">English</option>
@@ -33,6 +36,16 @@ function App() {
           <ContextClass />
         </div>
       </SubjectData.Provider>
+      {/* Routes */}
+      <Link to='/'>Home</Link>
+      <Link to='/login'>Login</Link>
+      <Link to='/signup'>Signup</Link>
+
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path="/signup" element={<SignupPage/>} />
+      </Routes>
     </div>
   );
 }

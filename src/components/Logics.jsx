@@ -115,7 +115,7 @@ const Logics = () => {
         onChange={(e) => setGender(e.target.value)}
         checked={gender == "Female"}
       />
-      <lable htmlFor="female">Female</lable>
+      <label htmlFor="female">Female</label>
       <h3>Selected Gender : {gender}</h3>
       {/* dropdown */}
       <br />
