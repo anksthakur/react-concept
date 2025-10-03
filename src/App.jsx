@@ -16,6 +16,7 @@ import College from "./components/College";
 import Student from "./components/Student";
 import User from "./components/User";
 import Userdetails from "./components/Userdetails";
+import Api from "./components/Api";
 
 function App() {
   const [subject, setSuject] = useState("English");
@@ -66,6 +67,9 @@ function App() {
         <Route path="student" element={<Student/>}/>
         </Route>
       </Routes>
+
+      {/* API */}
+      <Api/>
     </div>
   );
 }
