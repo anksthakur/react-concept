@@ -44,6 +44,7 @@ const Api = () => {
   // };
 
   // Edit User
+ //got to the edit page
   const editUser=async(id)=>{
     Navigate("/edit"+id)
   }
