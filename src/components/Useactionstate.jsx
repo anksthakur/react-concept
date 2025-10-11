@@ -8,11 +8,11 @@ const Useactionstate = () => {
     let regex = /^[A-Z0-9]+$/i;
 
     if (!name || name.length > 5) {
-      return { error: "username must be 5 char" };
+      return { error: "username must be 5 char" ,name,password};
     } else if (!regex.test(password)) {
-      return { error: "password must be in num or alp" };
+      return { error: "password must be in num or alp" ,password,name};
     } else {
-      return { message: "Login Successful" };
+      return { message: "Login Successful",name,password };
     }
   };
   const [data, action, pending] = useActionState(handleSubmit);
@@ -23,9 +23,10 @@ const Useactionstate = () => {
       {data?.message && <span>{data?.message}</span>}
       {data?.error && <span>{data?.error}</span>}
       <form action={action}>
-        <input type="text" name="name" placeholder="enter username" />
+        {/* defaultValue use hota hai ki agar input m value hai to input m he rhegi*/}
+        <input defaultValue={data?.name} type="text" name="name" placeholder="enter username" />
         <br />
-        <input type="text" name="password" placeholder="enter password" />
+        <input defaultValue={data?.password} type="text" name="password" placeholder="enter password" />
         <br />
         <button>Login</button>
       </form>
