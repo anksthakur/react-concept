@@ -45,6 +45,6 @@ const EditPage = () => {
       <button onClick={updateUser}>Update User</button>
     </div>
   );
-};
+}
 
 export default EditPage;

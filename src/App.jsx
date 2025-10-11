@@ -17,6 +17,7 @@ import Student from "./components/Student";
 import User from "./components/User";
 import Userdetails from "./components/Userdetails";
 import Api from "./components/Api";
+import Validation from "./components/Validation";
 
 function App() {
   const [subject, setSuject] = useState("English");
@@ -70,6 +71,9 @@ function App() {
 
       {/* API */}
       <Api/>
+      <br/>
+      <br/>
+      <Validation/>
     </div>
   );
 }
