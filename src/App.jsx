@@ -19,18 +19,19 @@ import Userdetails from "./components/Userdetails";
 import Api from "./components/Api";
 import Validation from "./components/Validation";
 import Useactionstate from "./components/Useactionstate";
+import Usereducer from "./components/Usereducer";
 
 function App() {
   const [subject, setSuject] = useState("English");
   return (
     <div>
       <h1 className="">react + vite</h1>
-      <CustomHook />
+      {/* <CustomHook />
       <Useformstatus />
       <HomePage />
       <Logics />
       <Useeffect />
-      <Useref />
+      <Useref /> */}
       {/* Context API */}
       <SubjectData.Provider value={subject}>
         <div style={{ backgroundColor: "yellow" }}>
@@ -71,12 +72,13 @@ function App() {
       </Routes>
 
       {/* API */}
-      <Api/>
+      {/* <Api/> */}
       <br/>
       <br/>
       {/* validation */}
       {/* <Validation/> */}
-      <Useactionstate/>
+      {/* <Useactionstate/> */}
+      <Usereducer/>
     </div>
   );
 }
