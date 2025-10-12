@@ -21,6 +21,7 @@ import Validation from "./components/Validation";
 import Useactionstate from "./components/Useactionstate";
 import Usereducer from "./components/Usereducer";
 import Lazyloading from "./components/Lazyloading";
+import UseAPI from "./components/UseAPI";
 
 function App() {
   const [subject, setSuject] = useState("English");
@@ -80,7 +81,8 @@ function App() {
       {/* <Validation/> */}
       {/* <Useactionstate/> */}
       {/* <Usereducer/> */}
-      <Lazyloading/>
+      {/* <Lazyloading/> */}
+      <UseAPI/>
     </div>
   );
 }
