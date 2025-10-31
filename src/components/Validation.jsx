@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const Validation = () => {
-  const [name, setName] = useState();
+  // const [name, setName] = useState();
   const [nameerr, setNameerr] = useState();
-  const [pass, setPass] = useState();
+  // const [pass, setPass] = useState();
   const [passerr, setPaserr] = useState();
 
   const handleName = (e) => {
